@@ -18,6 +18,6 @@ public class ResumeApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(userRepository.findAll());
+        System.out.println(userRepository.findByLastNameContainingIgnoreCase("last"));
     }
 }

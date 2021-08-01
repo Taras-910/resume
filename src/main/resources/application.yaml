@@ -12,7 +12,6 @@ spring:
         default_batch_fetch_size: 20
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
-        id.new_generator_mappings: false
   datasource:
     # ImMemory
     url: jdbc:h2:mem:resume
@@ -28,3 +27,8 @@ spring:
     username: sa
     password:
   h2.console.enabled: true
+
+  data.rest:
+    #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
+    basePath: /api
+    returnBodyOnCreate: true
