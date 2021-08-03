@@ -1,12 +1,13 @@
 package ua.top.bootjava.util;
 
+import ua.top.bootjava.error.IllegalRequestDataException;
 import ua.top.bootjava.model.BaseEntity;
 
 public class ValidationUtil {
 
     public static void checkNew(BaseEntity entity) {
         if (!entity.isNew()) {
-            throw new IllegalArgumentException(entity + " must be new (id=null)");
+            throw new IllegalRequestDataException(entity + " must be new (id=null)");
         }
     }
 
@@ -15,7 +16,7 @@ public class ValidationUtil {
         if (entity.isNew()) {
             entity.setId(id);
         } else if (entity.id() != id) {
-            throw new IllegalArgumentException(entity + " must has id=" + id);
+            throw new IllegalRequestDataException(entity + " must has id=" + id);
         }
     }
 }
